@@ -1,0 +1,60 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+<section>
+
+<h2> Publications </h2>
+
+<p>
+{% if publications %}
+	<ul>
+		{% for publi in publications %}
+		<li>
+				{{ publi.name }} <br/>
+				<i> {{ publi.authors }}. </i> <br/>
+				[<a href="{{ publi.arxiv_link }}">Article</a>] 
+				[<a href="{{ publi.code_link }}">Code</a>]
+				(<a href="{{ publi.venue_link }}">{{ publi.venue_name }}</a>,
+					{{ publi.date|date:"Y" }})
+		</li>
+		{% endfor %}
+	</ul>
+{% else %}
+	No publications to display.
+{% endif %}
+</p>
+
+<h2> Talks and posters </h2>
+
+<p>
+{% if talks %}
+	<ul>
+		{% for talk in talks %}
+		<li>
+			  <a href="{{ talk.event_link }}">{{ talk.event_name }}</a> 
+			{% if talk.slides_filename %}
+			- [<a href="/static/files/{{ talk.slides_filename }}.pdf">Slides</a>] 
+			{% endif %}
+			{% if talk.poster_filename %}
+			-	[<a href="/static/files/{{ talk.poster_filename }}.pdf">Poster</a>] 
+			{% endif %}
+		<br/>
+
+			  {{ talk.date|date:"m/y" }} -
+				{{ talk.location }} 
+		</li>
+		{% endfor %}
+	</ul>
+{% else %}
+	No talks to display.
+{% endif %}
+</p>
+
+Reviewing:
+	<a href="https://nips.cc/Conferences/2019/">NeurIPS 2019</a>,
+	<a href="https://icml.cc/Conferences/2020">ICML 2020</a>.
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+                
+<section>
+	<header class="major">
+		<h2>Articles</h2>
+	</header>
+	<div class="posts">
+		{% for article in articles %}
+		<article>
+			<a href="{% url 'article' article.url_name %}" class="image">
+			<img src="{{ article.main_picture }}" alt="" />
+			<!-- 
+			For an image that is in the server, replace article.name_picture
+			by the relevant name. And add the image to static files.
+		 <img src="/static/images/articles/article.name_picture.jpg" alt="" />
+			-->
+			</a>
+			<h3>{{ article.title }}</h3>
+			<p> {{ article.date|date:"d/m/y" }} - {{ article.summary }}</p>
+			<ul class="actions">
+				<li><a href="{% url 'article' article.url_name %}" class="button">Read</a></li>
+			</ul>  		
+		</article>
+		{% endfor %}
+	</div>
+</section>
+
+
+{% endblock %}
