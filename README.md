@@ -1,6 +1,6 @@
 # Personal Website
 
-Personal website for research that I wrote with django: (https://robinvogel.me).
+Personal website for research that I wrote with django: https://robinvogel.me.
 
 It is based on [Editorial by html5up](https://html5up.net/editorial).
 
