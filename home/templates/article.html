@@ -7,11 +7,10 @@
 
 {% block content %}
 
-	<!-- <section id="banner" style="padding-bottom:0;float:right">  -->
-	<span id="banner" class="image object" style="float:right">
-		<img src="{{ article.main_picture }}" alt="" />
-	</span>
-	<!-- </section> -->
+	<section>
+		<span id="banner" class="image object" style="float:right;max-width:-webkit-fill-available;">
+			<img src="{{ article.main_picture }}" alt="" />
+		</span>
 	<div class="content">
 		<header>
 			<h2> {{ article.title }}	</h2>
@@ -19,18 +18,16 @@
 			</p>
 		</header>
 		{% autoescape off %}
-				{{ article.first_paragraph }}
-		{% endautoescape %}
-		{% autoescape off %}
-				{{ article.last_paragraphs }}
+			{{ article.main_text }}
 		{% endautoescape %}
 	</div>
 
 	<p> <a href="{% url 'blog' %}">Back to article list</a> - Written on the {{ article.date|date:"d/m/y" }}.
 	<p/>
 
-
 	<hr>
+
+	</section>
 	
 	<p>
 	Comments:

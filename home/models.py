@@ -88,8 +88,7 @@ class Articles(models.Model):
     subtitle = models.CharField(max_length=10000, help_text="Subtitle.", default="")
     summary = models.TextField(max_length=10000,
         help_text="Summary.", default="")
-    first_paragraph = models.TextField(help_text="First paragraph.", default="")
-    last_paragraphs = models.TextField(help_text="Last paragraphs.", default="")
+    main_text = models.TextField(help_text="Main text.", default="")
     main_picture = models.CharField(max_length=400,
                                     help_text="Main picture.",
                                     default="")
