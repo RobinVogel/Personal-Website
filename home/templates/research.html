@@ -19,6 +19,12 @@ Robin Vogel
 				<i> {{ publi.authors }}. </i> <br/>
 				[<a href="{{ publi.arxiv_link }}">Article</a>] 
 				[<a href="{{ publi.code_link }}">Code</a>]
+				{% if publi.slides_filename %}
+				[<a href="/static/files/{{ publi.slides_filename }}.pdf">Slides</a>] 
+					{% endif %}
+				{% if publi.poster_filename %}
+					[<a href="/static/files/{{ publi.poster_filename }}.pdf">Poster</a>] 
+				{% endif %}
 				(<a href="{{ publi.venue_link }}">{{ publi.venue_name }}</a>,
 					{{ publi.date|date:"Y" }})
 		</li>
@@ -36,12 +42,12 @@ Robin Vogel
 	<ul>
 		{% for talk in talks %}
 		<li>
-			  <a href="{{ talk.event_link }}">{{ talk.event_name }}</a> 
+			  <a href="{{ talk.event_link }}">{{ talk.event_name }}</a> -
 			{% if talk.slides_filename %}
-			- [<a href="/static/files/{{ talk.slides_filename }}.pdf">Slides</a>] 
+				[<a href="/static/files/{{ talk.slides_filename }}.pdf">Slides</a>] 
 			{% endif %}
 			{% if talk.poster_filename %}
-			-	[<a href="/static/files/{{ talk.poster_filename }}.pdf">Poster</a>] 
+				[<a href="/static/files/{{ talk.poster_filename }}.pdf">Poster</a>] 
 			{% endif %}
 		<br/>
 

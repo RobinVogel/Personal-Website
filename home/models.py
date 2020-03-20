@@ -38,6 +38,10 @@ class Publications(models.Model):
         max_length=400, help_text="Venue name.", default="")
     venue_link = models.CharField(
         max_length=400, help_text="Venue link.", default="")
+    poster_filename = models.CharField(
+        max_length=400, help_text="Poster file name.", default="")
+    slides_filename = models.CharField(
+        max_length=400, help_text="Slides handout file name.", default="")
 
     class Meta:
         ordering = ['-date']
