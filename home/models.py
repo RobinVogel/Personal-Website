@@ -39,9 +39,11 @@ class Publications(models.Model):
     venue_link = models.CharField(
         max_length=400, help_text="Venue link.", default="")
     poster_filename = models.CharField(
-        max_length=400, help_text="Poster file name.", default="")
+        max_length=400, help_text="Poster file name.", default="",
+        blank=True)
     slides_filename = models.CharField(
-        max_length=400, help_text="Slides handout file name.", default="")
+        max_length=400, help_text="Slides handout file name.", default="",
+        blank=True)
 
     class Meta:
         ordering = ['-date']
@@ -67,9 +69,11 @@ class Talks(models.Model):
     event_link = models.CharField(
         max_length=400, help_text="Event link.", default="")
     poster_filename = models.CharField(
-        max_length=400, help_text="Poster file name.", default="")
+        max_length=400, help_text="Poster file name.", default="",
+        blank=True)
     slides_filename = models.CharField(
-        max_length=400, help_text="Slides handout file name.", default="")
+        max_length=400, help_text="Slides handout file name.", default="",
+        blank=True)
 
     class Meta:
         ordering = ['-date']
