@@ -23,7 +23,8 @@
 
 		<!-- Enable MathJax -->
 		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-		<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+		<script id="MathJax-script" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.0.1/es5/tex-mml-chtml.js"></script>
+		<!-- https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js -->
 
 		<!-- Jquery is required for syntax highlighting -->
 		<script
@@ -52,6 +53,23 @@
 			    });
 		});
 		</script>
+		<!-- Enable collapsible content -->
+		<script>      
+		var coll = document.getElementsByClassName("collapsible");
+		var i;
+
+		for (i = 0; i < coll.length; i++) {
+			  coll[i].addEventListener("click", function() {
+			    this.classList.toggle("active");
+			    var content = this.nextElementSibling;
+			    if (content.style.display === "block") {
+			      content.style.display = "none";
+			    } else {
+			      content.style.display = "block";
+			    }
+			  });
+		  }
+		</script>
 
 	</head>
 	<body class="is-preload">
@@ -78,8 +96,8 @@
 								</header>
 								
 							<!-- Content -->
-								{% block content %}
-								{% endblock %}
+							{% block content %}
+							{% endblock %}
 						</div>
 					</div>
 
@@ -192,7 +210,7 @@
 
 							<!-- Footer -->
 								<footer id="footer">
-									<p class="copyright"> <!-- &copy; Untitled. All rights reserved. -->
+									<p class="copyright"> Robin Vogel &copy; 2020. All rights reserved. <br>
 									Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
 								</footer>
 
