@@ -53,23 +53,6 @@
 			    });
 		});
 		</script>
-		<!-- Enable collapsible content -->
-		<script>      
-		var coll = document.getElementsByClassName("collapsible");
-		var i;
-
-		for (i = 0; i < coll.length; i++) {
-			  coll[i].addEventListener("click", function() {
-			    this.classList.toggle("active");
-			    var content = this.nextElementSibling;
-			    if (content.style.display === "block") {
-			      content.style.display = "none";
-			    } else {
-			      content.style.display = "block";
-			    }
-			  });
-		  }
-		</script>
 
 	</head>
 	<body class="is-preload">
@@ -188,7 +171,8 @@
 										<li class="icon solid fa-portrait">
 											<!-- <div align="center" style="margin-bottom:10px"> -->
 											<!-- </div> -->
-												<img src="{% static 'images/robinvogel.jpg' %}" alt="" />
+											<button type="button" class="collapsible">Photo</button>
+											<img class="collapsed-content" src="{% static 'images/robinvogel.jpg' %}" alt="" />
 										</li>
 										<li class="icon solid fa-address-card">
 											<a href="{% static 'files/VOGEL_Robin_CV.pdf' %}">
@@ -226,6 +210,24 @@
 			<script src="{% static 'js/breakpoints.min.js' %}"></script>
 			<script src="{% static 'js/util.js' %}"></script>
 			<script src="{% static 'js/main.js' %}"></script>
+
+		<!-- Enable collapsible content -->
+		<script>      
+		var coll = document.getElementsByClassName("collapsible");
+		var i;
+
+		for (i = 0; i < coll.length; i++) {
+			  coll[i].addEventListener("click", function() {
+			    this.classList.toggle("active");
+			    var content = this.nextElementSibling;
+			    if (content.style.display === "block") {
+			      content.style.display = "none";
+			    } else {
+			      content.style.display = "block";
+			    }
+			  });
+		  }
+		</script>
 
 
 	</body>
