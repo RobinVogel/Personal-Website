@@ -44,6 +44,9 @@ class Publications(models.Model):
     slides_filename = models.CharField(
         max_length=400, help_text="Slides handout file name.", default="",
         blank=True)
+    video_link = models.CharField(
+        max_length=400, help_text="Link to the video if available.", default="",
+        blank=True)
 
     class Meta:
         ordering = ['-date']
@@ -73,6 +76,9 @@ class Talks(models.Model):
         blank=True)
     slides_filename = models.CharField(
         max_length=400, help_text="Slides handout file name.", default="",
+        blank=True)
+    video_link = models.CharField(
+        max_length=400, help_text="Link to the video if available.", default="",
         blank=True)
 
     class Meta:

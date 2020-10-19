@@ -8,25 +8,34 @@ Robin Vogel
 
 <section>
 
-<h2> Publications </h2>
+<p>
+<b>Thesis:</b>
+Similarity Ranking for Biometrics: Theory and Practice. <i> Robin Vogel. </i> 
+[<a href="/static/files/VOGEL-thesis-2020-oct.pdf">Manuscript</a>] 
+[<a href="/static/files/VOGEL-defense-2020-10-09.pdf">Slides</a>] (2020)
+
+<h3> Publications </h3>
 
 <p>
 {% if publications %}
 	<ul>
 		{% for publi in publications %}
 		<li>
-				{{ publi.name }} <br/>
-				<i> {{ publi.authors }}. </i> <br/>
-				[<a href="{{ publi.arxiv_link }}">Article</a>] 
-				[<a href="{{ publi.code_link }}">Code</a>]
-				{% if publi.slides_filename %}
+			{{ publi.name }} <br/>
+			<i> {{ publi.authors }}. </i> <br/>
+			[<a href="{{ publi.arxiv_link }}">Article</a>] 
+			[<a href="{{ publi.code_link }}">Code</a>]
+			{% if publi.slides_filename %}
 				[<a href="/static/files/{{ publi.slides_filename }}.pdf">Slides</a>] 
-					{% endif %}
-				{% if publi.poster_filename %}
-					[<a href="/static/files/{{ publi.poster_filename }}.pdf">Poster</a>] 
-				{% endif %}
-				(<a href="{{ publi.venue_link }}">{{ publi.venue_name }}</a>,
-					{{ publi.date|date:"Y" }})
+			{% endif %}
+			{% if publi.poster_filename %}
+				[<a href="/static/files/{{ publi.poster_filename }}.pdf">Poster</a>] 
+			{% endif %}
+			{% if publi.video_link %}
+				[<a href="{{ publi.video_link }}">Video</a>] 
+			{% endif %}
+			(<a href="{{ publi.venue_link }}">{{ publi.venue_name }}</a>,
+				{{ publi.date|date:"Y" }})
 		</li>
 		{% endfor %}
 	</ul>
@@ -35,7 +44,17 @@ Robin Vogel
 {% endif %}
 </p>
 
-<h2> Talks and posters </h2>
+<p>
+<b>Reviewing:</b>
+	<a href="https://nips.cc/Conferences/2019/">NeurIPS 2019</a>,
+	<a href="https://icml.cc/Conferences/2020">ICML 2020</a>,
+	<a href="https://lod2020.icas.xyz/deadlines/">LOD 2020</a>,
+	<a href="https://nips.cc/Conferences/2020/">NeurIPS 2020</a>.
+
+</p>
+
+
+<h3> Talks and posters </h3>
 
 <p>
 {% if talks %}
@@ -49,6 +68,9 @@ Robin Vogel
 			{% if talk.poster_filename %}
 				[<a href="/static/files/{{ talk.poster_filename }}.pdf">Poster</a>] 
 			{% endif %}
+			{% if talk.video_link %}
+				[<a href="{{ talk.video_link }}">Video</a>] 
+			{% endif %}
 		<br/>
 
 			  {{ talk.date|date:"m/y" }} -
@@ -60,11 +82,6 @@ Robin Vogel
 	No talks to display.
 {% endif %}
 </p>
-
-Reviewing:
-	<a href="https://nips.cc/Conferences/2019/">NeurIPS 2019</a>,
-	<a href="https://icml.cc/Conferences/2020">ICML 2020</a>,
-	<a href="https://nips.cc/Conferences/2020/">NeurIPS 2020</a>.
 
 </section>
 
